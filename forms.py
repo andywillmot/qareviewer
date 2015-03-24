@@ -2,12 +2,11 @@ from django import forms
 from .models import *
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, ButtonHolder, Submit
+from django.core.urlresolvers import reverse
 
 class DeliverableListFormHelper(FormHelper):
     model = Deliverable
     form_tag = False
-    form_action = ''
-    form_method = 'POST'
 
 class ReviewIterationListFormHelper(FormHelper):
     model = ReviewIteration
@@ -25,4 +24,29 @@ class CommentListFormHelper(FormHelper):
         Submit('submit', 'Filter', css_class='btn btn-default')
     ))
 
+class DeliverableForm(ModelForm):
+    class Meta:
+        model = Deliverable
+#    def __init__(self, *args, **kwargs):
+#        super(DeliverableForm, self).__init__(*args, **kwargs)
+#        self.helper = DeliverableFormHelper()
+#        self.helper.form_id = 'id-exampleForm'
+#        self.helper.form_class = 'blueForms'
+#        self.helper.form_method = 'post'
+#        self.helper.form_action = reverse('qareviewer:deliverable-create')
+#        self.helper.add_input(Submit('submit', 'Submit'))
+
+class ReviewIterationForm(ModelForm):
+    class Meta:
+        model = ReviewIteration
+    def __init__(self, *args, **kwargs):
+        super(ReviewIterationForm, self).__init__(*args, **kwargs)
+        self.helper = ReviewIterationFormHelper()
+
+class CommentForm(ModelForm):
+    class Meta:
+        model = Comment
+    def __init__(self, *args, **kwargs):
+        super(CommentForm, self).__init__(*args, **kwargs)
+        self.helper = CommentFormHelper()
     
