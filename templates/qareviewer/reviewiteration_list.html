@@ -4,11 +4,10 @@
 {% load crispy_forms_tags %}
 
 {% block navbaradd %}
-<li><a href="/qareviewer/reviewiteration/create"><span class="glyphicon glyphicon-plus"></span>Add Review Iteration</a></li>
+<li><a href="/qareviewer/reviewiteration/create{% if request.GET.deliverable__id %}?deliverable__id={{ request.GET.deliverable__id }}{% endif %}"><span class="glyphicon glyphicon-plus"></span>Add Review Iteration</a></li>
 {% endblock navbaradd %}
 
 {% block content %}
-{% if request.GET.deliverable__id %}<p>Del ID: {{ request.GET.deliverable__id }}</p>{% endif %}
 
 {% render_table table %}
 
