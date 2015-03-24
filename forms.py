@@ -24,7 +24,7 @@ class CommentListFormHelper(FormHelper):
         Submit('submit', 'Filter', css_class='btn btn-default')
     ))
 
-class DeliverableForm(form.ModelForm):
+class DeliverableForm(forms.ModelForm):
     class Meta:
         model = Deliverable
 #    def __init__(self, *args, **kwargs):
@@ -36,14 +36,14 @@ class DeliverableForm(form.ModelForm):
 #        self.helper.form_action = reverse('qareviewer:deliverable-create')
 #        self.helper.add_input(Submit('submit', 'Submit'))
 
-class ReviewIterationForm(form.ModelForm):
+class ReviewIterationForm(forms.ModelForm):
     class Meta:
         model = ReviewIteration
     def __init__(self, *args, **kwargs):
         super(ReviewIterationForm, self).__init__(*args, **kwargs)
         self.helper = ReviewIterationFormHelper()
 
-class CommentForm(form.ModelForm):
+class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
     def __init__(self, *args, **kwargs):
