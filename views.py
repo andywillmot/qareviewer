@@ -26,15 +26,19 @@ class DeliverableList(LoginRequiredMixin,FilteredSingleTableView):
     filter_class = DeliverableListFilter
     formhelper_class = DeliverableListFormHelper
 
-class DeliverableCreate(LoginRequiredMixin,generic.FormView):
+class DeliverableCreate(LoginRequiredMixin,generic.CreateView):
     model=Deliverable
-    success_url = 'qareviewer:deliverable-list'
     template_name = 'qareviewer/deliverable_form.html'
     form_class = DeliverableForm
+    def get_success_url(self):
+        return reverse('qareviewer:deliverable-list')
 
 class DeliverableUpdate(LoginRequiredMixin,generic.UpdateView):
     model=Deliverable
-    success_url = 'qareviewer:deliverable-list'
+    template_name = 'qareviewer/deliverable_form.html'
+    form_class = DeliverableForm
+    def get_success_url(self):
+        return reverse('qareviewer:deliverable-list')
 
 class ReviewIterationList(LoginRequiredMixin,FilteredSingleTableView):
     model=ReviewIteration
@@ -44,11 +48,17 @@ class ReviewIterationList(LoginRequiredMixin,FilteredSingleTableView):
 
 class ReviewIterationCreate(generic.CreateView):
     model=ReviewIteration
-    success_url = 'qareviewer:reviewiteration-list'
+    template_name = 'qareviewer/reviewiteration_form.html'
+    form_class = ReviewIterationForm
+    def get_success_url(self):
+        return reverse('qareviewer:reviewiteration-list')
 
 class ReviewIterationUpdate(generic.UpdateView):
     model=ReviewIteration
-    success_url = 'qareviewer:reviewiteration-list'
+    template_name = 'qareviewer/reviewiteration_form.html'
+    form_class = ReviewIterationForm
+    def get_success_url(self):
+        return reverse('qareviewer:reviewiteration-list')
 
 class CommentList(LoginRequiredMixin,FilteredSingleTableView):
     model=Comment
@@ -58,11 +68,17 @@ class CommentList(LoginRequiredMixin,FilteredSingleTableView):
 
 class CommentCreate(generic.CreateView):
     model=Comment
-    success_url = 'qareviewer:comment-list'
+    template_name = 'qareviewer/comment_form.html'
+    form_class = CommentForm
+    def get_success_url(self):
+        return reverse('qareviewer:comment-list')
 
 class CommentUpdate(generic.UpdateView):
     model=Comment
-    success_url = 'qareviewer:comment-list'
+    template_name = 'qareviewer/comment_form.html'
+    form_class = CommentForm
+    def get_success_url(self):
+        return reverse('qareviewer:comment-list')
 
 
 #import export stuff
