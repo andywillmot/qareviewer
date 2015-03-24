@@ -1,5 +1,11 @@
-{% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static 'qareviewer/style.css' %}" />
+{% extends "base.html" %}
+
+{% load render_table from django_tables2 %}
+{% load crispy_forms_tags %}
+
+{% block navbaradd %}
+<li><a href="/qareviewer/comment/create"><span class="glyphicon glyphicon-plus"></span>Add Comment</a></li>
+{% endblock navbaradd %}
 
 {% block content %}
 	<h3>Create a comment<h3>
