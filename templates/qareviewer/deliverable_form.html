@@ -1,5 +1,11 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+
+{% load render_table from django_tables2 %}
 {% load crispy_forms_tags %}
+
+{% block navbaradd %}
+<li><a href="/qareviewer/deliverable/create"><span class="glyphicon glyphicon-plus"></span>Add Deliverable</a></li>
+{% endblock navbaradd %}
 
 {% block content %}
 	<h3>Create a deliverable</h3>
