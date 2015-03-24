@@ -39,14 +39,14 @@ class DeliverableForm(forms.ModelForm):
 class ReviewIterationForm(forms.ModelForm):
     class Meta:
         model = ReviewIteration
-    def __init__(self, *args, **kwargs):
-        self.request = kwargs.pop("request")
-        deliverableid = request.GET.get('deliverable__id', '')
-        if deliverableid != '':
-            initial = kwargs.get('initial', {})
-            initial['deliverable'] = Deliverable.objects.get(pk=deliverableid)
-            kwargs['initial'] = initial
-        super(ReviewIterationForm, self).__init__(*args, **kwargs)
+#    def __init__(self, *args, **kwargs):
+#        self.request = kwargs.pop("request")
+#        deliverableid = request.GET.get('deliverable__id', '')
+#        if deliverableid != '':
+#            initial = kwargs.get('initial', {})
+#            initial['deliverable'] = Deliverable.objects.get(pk=deliverableid)
+#            kwargs['initial'] = initial
+#        super(ReviewIterationForm, self).__init__(*args, **kwargs)
 #        self.helper = ReviewIterationFormHelper()
 
 class CommentForm(forms.ModelForm):
