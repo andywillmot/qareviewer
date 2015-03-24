@@ -8,7 +8,8 @@
 {% endblock navbaradd %}
 
 {% block content %}
-<p>Del ID: {{ request.deliverable__id }}</p>
+{% if request.GET.deliverable__id %}<p>Del ID: {{ request.GET.deliverable__id }}</p>{% endif %}
+
 {% render_table table %}
 
 {% endblock content %}
