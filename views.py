@@ -108,7 +108,7 @@ class DeliverableImport(generic.View):
     )
     formats = DEFAULT_FORMATS
     #: template for import view
-    import_template_name = 'import.html'
+    import_template_name = 'qareviewer/import.html'
     resource_class = None
 
     def get_import_formats(self):
@@ -250,7 +250,7 @@ class DeliverableProcessImport(generic.View):
     )
     formats = DEFAULT_FORMATS
     #: template for import view
-    import_template_name = 'import.html'
+    import_template_name = 'qareviewer/import.html'
     resource_class = None
 
     def get_import_formats(self):
@@ -354,7 +354,7 @@ class ReviewIterationImport(generic.View):
     )
     formats = DEFAULT_FORMATS
     #: template for import view
-    import_template_name = 'import.html'
+    import_template_name = 'qareviewer/import.html'
     resource_class = None
 
     def get_import_formats(self):
@@ -496,7 +496,7 @@ class ReviewIterationProcessImport(generic.View):
     )
     formats = DEFAULT_FORMATS
     #: template for import view
-    import_template_name = 'import.html'
+    import_template_name = 'qareviewer/import.html'
     resource_class = None
 
     def get_import_formats(self):
@@ -600,7 +600,7 @@ class CommentImport(generic.View):
     )
     formats = DEFAULT_FORMATS
     #: template for import view
-    import_template_name = 'import.html'
+    import_template_name = 'qareviewer/import.html'
     resource_class = None
 
     def get_import_formats(self):
@@ -742,7 +742,7 @@ class CommentProcessImport(generic.View):
     )
     formats = DEFAULT_FORMATS
     #: template for import view
-    import_template_name = 'import.html'
+    import_template_name = 'qareviewer/import.html'
     resource_class = None
 
     def get_import_formats(self):
