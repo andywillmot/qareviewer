@@ -41,12 +41,12 @@ class Deliverable(models.Model):
 
 class ReviewIteration(models.Model):
     deliverable = models.ForeignKey(Deliverable)
-    version = models.CharField(max_length=30)
+    version = models.CharField(max_length=30,null=True,blank=True)
     iteration_number = models.BigIntegerField('Iteration No.')
-    publisher = models.CharField(max_length=40)
-    issued_date = models.DateTimeField('Date Issued')
-    reviewer = models.CharField(max_length=40)
-    review_date = models.DateTimeField('Date Reviewed')
+    publisher = models.CharField(max_length=40,null=True,blank=True)
+    issued_date = models.DateTimeField('Date Issued',null=True,blank=True)
+    reviewer = models.CharField(max_length=40,null=True,blank=True)
+    review_date = models.DateTimeField('Date Reviewed',null=True,blank=True)
     def __str__(self):
         return str(self.deliverable) + ':' + self.version + ' iter. ' + str(self.iteration_number)
 
