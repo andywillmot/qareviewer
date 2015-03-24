@@ -2,12 +2,9 @@
 <link rel="stylesheet" type="text/css" href="{% static 'qareviewer/style.css' %}" />
 
 {% block content %}
-	<h3>Create deliverable<h3>
-	<form method="post" action="">
-	{% csrf_token %}
-	<table>
-    {{ form.as_table }}
-	</table>
+	<h3>Create a comment<h3>
+	<form method="post" action="">{% csrf_token %}
+	{{ form.as_p }}
 	<input type="submit" value="Submit" />
 	</form>
 {% endblock %}
