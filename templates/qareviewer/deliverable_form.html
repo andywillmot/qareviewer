@@ -3,7 +3,6 @@
 
 {% block content %}
 	<h3>Create deliverable<h3>
-	<form method="post" class="bootstrap" action="">
 	{% csrf_token %}
 	{% crispy form %}
 	<input type="submit" value="Submit" />
