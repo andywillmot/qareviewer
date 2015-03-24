@@ -6,7 +6,7 @@ from crispy_forms.layout import Layout, ButtonHolder, Submit
 class DeliverableListFormHelper(FormHelper):
     model = Deliverable
     form_tag = False
-#    attrs = {"role": "form"}
+    attrs = {"action": ""}
 
 class ReviewIterationListFormHelper(FormHelper):
     model = ReviewIteration
