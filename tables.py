@@ -11,8 +11,8 @@ class DeliverableTable(dt2.Table):
 
     id = dt2.LinkColumn('qareviewer:deliverable-detail',args=[A('pk')])
     template_deliverable = dt2.LinkColumn('qareviewer:reviewiteration-list-filter',args=[A('pk')])
-#    number_of_review_iterations = dt2.
-
+    review_iterations = dt2.LinkColumn('qareviewer:reviewiteration-list-filter',
+        args=[A('pk')],accessor='ReviewIterations.objects.filter(deliverable=pk)')
     #,orderable=False,empty_values=())
 
 #    def render_action(self):
