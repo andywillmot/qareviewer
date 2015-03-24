@@ -24,7 +24,7 @@ class DeliverableList(LoginRequiredMixin,FilteredSingleTableView):
     model = Deliverable
     table_class = DeliverableTable
     filter_class = DeliverableListFilter
-    formhelper_class = DeliverableListFormHelper
+#    formhelper_class = DeliverableListFormHelper
 
 class DeliverableCreate(LoginRequiredMixin,generic.CreateView):
     model=Deliverable
@@ -44,7 +44,7 @@ class ReviewIterationList(LoginRequiredMixin,FilteredSingleTableView):
     model=ReviewIteration
     table_class=ReviewIterationTable
     filter_class = ReviewIterationListFilter
-    formhelper_class = ReviewIterationListFormHelper
+#    formhelper_class = ReviewIterationListFormHelper
 
 class ReviewIterationCreate(generic.CreateView):
     model=ReviewIteration
@@ -64,7 +64,7 @@ class CommentList(LoginRequiredMixin,FilteredSingleTableView):
     model=Comment
     table_class=CommentTable
     filter_class = CommentListFilter
-    formhelper_class = CommentListFormHelper
+#    formhelper_class = CommentListFormHelper
 
 class CommentCreate(generic.CreateView):
     model=Comment
