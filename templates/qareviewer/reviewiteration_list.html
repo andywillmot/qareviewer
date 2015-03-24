@@ -3,6 +3,10 @@
 {% load render_table from django_tables2 %}
 {% load crispy_forms_tags %}
 
+{% block navbaradd %}
+<li><a href="/qareviewer/reviewiteration/create"><span class="glyphicon glyphicon-plus"></span>Add Review Iteration</a></li>
+{% endblock navbaradd %}
+
 {% block content %}
 
 {% render_table table %}
