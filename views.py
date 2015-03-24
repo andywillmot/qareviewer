@@ -26,9 +26,11 @@ class DeliverableList(LoginRequiredMixin,FilteredSingleTableView):
     filter_class = DeliverableListFilter
     formhelper_class = DeliverableListFormHelper
 
-class DeliverableCreate(generic.CreateView):
+class DeliverableCreate(LoginRequiredMixin,generic.FormView):
     model=Deliverable
     success_url = 'qareviewer:deliverable-list'
+    template_name = 'qareviewer/deliverable_form.html'
+    form_class = DeliverableForm
 
 class DeliverableUpdate(LoginRequiredMixin,generic.UpdateView):
     model=Deliverable
