@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+	<h3>Create deliverable<h3>
+	<form method="post" class="bootstrap" action="">
+	{% csrf_token %}
+	{% crispy form %}
+	<input type="submit" value="Submit" />
+	</form>
+{% endblock %}
