@@ -2,8 +2,9 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-	<h3>Create deliverable<h3>
-	{% crispy form %}
+	<h3>Create a deliverable<h3>
+	<form method="POST" action="">
+	{{ form.as_p }}
 	<input type="submit" value="Submit" />
 	</form>
 {% endblock %}
