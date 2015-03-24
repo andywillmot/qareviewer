@@ -22,10 +22,17 @@ urlpatterns = patterns('',
 
     #export
     url(r'^deliverables/export$', DeliverableExport.as_view(), name='deliverable_export'),
+    url(r'^reviewiterations/export$', ReviewIterationExport.as_view(), name='reviewiteration_export'),
+    url(r'^comments/export$', CommentExport.as_view(), name='comment_export'),
+
 
     #import
     url(r'^deliverables/import$', DeliverableImport.as_view(), name='deliverable_import'),
-    url(r'^deliverables/process_import$', DeliverableProcessImport.as_view(), name='process_import'),
+    url(r'^deliverables/process_import$', DeliverableProcessImport.as_view(), name='deliverableprocess_import'),
+    url(r'^reviewiterations/import$', ReviewIterationImport.as_view(), name='reviewiteration_import'),
+    url(r'^reviewiterations/process_import$', ReviewIterationProcessImport.as_view(), name='reviewiterationprocess_import'),
+    url(r'^comments/import$', CommentImport.as_view(), name='comment_import'),
+    url(r'^comments/process_import$', CommentProcessImport.as_view(), name='commentprocess_import'),
 )
 
 urlpatterns += staticfiles_urlpatterns()
