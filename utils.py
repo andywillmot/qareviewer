@@ -9,7 +9,7 @@ class FilteredSingleTableView(SingleTableView):
     def get_queryset(self, **kwargs):
         qs = super(FilteredSingleTableView, self).get_queryset()
         self.filter = self.filter_class(self.request.GET, queryset=qs)
-        self.filter.form.helper = self.formhelper_class()
+    #    self.filter.form.helper = self.formhelper_class()
         return self.filter.qs
 
     def get_context_data(self, **kwargs):
