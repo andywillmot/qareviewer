@@ -3,12 +3,22 @@
 {% load render_table from django_tables2 %}
 {% load crispy_forms_tags %}
 
+{% block navbarleft %}
+<li><a href="/qareviewer/deliverables">Deliverables</a></li>
+<li><a href="/qareviewer/reviewiterations">Review Iterations</a></li> 
+<li class="active"><a href="/qareviewer/comments">Comments</a></li> 
+<li><a href="/qareviewer/comments/export"><span class="glyphicon glyphicon-export"></span>export</a></li>
+<li><a href="/qareviewer/comments/import"><span class="glyphicon glyphicon-import"></span>import</a></li> 
+{% endblock navbarleft %}	
+
+
+
 {% block navbaradd %}
 <li><a href="/qareviewer/comment/create"><span class="glyphicon glyphicon-plus"></span>Add Comment</a></li>
 {% endblock navbaradd %}
 
 {% block content %}
-
+{% if request.GET.reviewiteration__id %}<p><small>Filtered by review iteration ID: {{ request.GET.reviewiteration__id }}</small></p>{% endif %}
 {% render_table table %}
 
 {% endblock content %}

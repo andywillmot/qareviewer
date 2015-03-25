@@ -3,6 +3,14 @@
 {% load render_table from django_tables2 %}
 {% load crispy_forms_tags %}
 
+{% block navbarleft %}
+<li class="active"><a href="/qareviewer/deliverables">Deliverables</a></li>
+<li><a href="/qareviewer/reviewiterations">Review Iterations</a></li> 
+<li><a href="/qareviewer/comments">Comments</a></li> 
+<li><a href="/qareviewer/deliverables/export"><span class="glyphicon glyphicon-export"></span>export</a></li>
+<li><a href="/qareviewer/deliverables/import"><span class="glyphicon glyphicon-import"></span>import</a></li> 
+{% endblock navbarleft %}		
+
 {% block navbaradd %}
 <li><a href="/qareviewer/deliverable/create"><span class="glyphicon glyphicon-plus"></span>Add Deliverable</a></li>
 {% endblock navbaradd %}
